@@ -68,34 +68,3 @@ WHERE
 DELETE FROM RetailDB
 WHERE Total_Amount > 100000;
 
--- DIMENSION: PRODUCT
-
-SELECT 
-    ROW_NUMBER() OVER (ORDER BY Product_Category, Product_Brand) AS Product_ID,
-    Product_Category,
-    Product_Brand
-INTO dim_product
-FROM (
-    SELECT DISTINCT Product_Category, Product_Brand
-    FROM RetailDB
-) t;
--- FACT TABLE: SALES (MAP Product_ID)
-
-SELECT
-    r.Transaction_ID,
-    r.Customer_ID,
-    p.Product_ID,
-    r.Date,
-    r.Total_Purchases,
-    r.Total_Amount
-INTO fact_sales
-FROM RetailDB r
-JOIN dim_product p
-    ON r.Product_Category = p.Product_Category
-   AND r.Product_Brand = p.Product_Brand;
- 
-
-
-
-
-
