@@ -55,7 +55,7 @@ UPDATE RetailDB
 SET Gender = 'Female'
 WHERE LOWER(LTRIM(RTRIM(Gender))) IN ('f','female');
 
---Step 9 – Remove Invalid Data
+--Step 11 – Remove Invalid Data
 
 DELETE FROM RetailDB
 WHERE 
@@ -63,7 +63,7 @@ WHERE
     OR (Total_Amount IS NOT NULL AND Total_Amount <= 0);
 
 
--- Step 10 – Remove Outliers
+-- Step 12 – Remove Outliers
 
 DELETE FROM RetailDB
 WHERE Total_Amount > 100000;
