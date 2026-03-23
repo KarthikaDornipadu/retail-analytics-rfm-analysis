@@ -55,7 +55,7 @@ UPDATE RetailDB
 SET Gender = 'Female'
 WHERE LOWER(LTRIM(RTRIM(Gender))) IN ('f','female');
 
---Step 9 – Remove Invalid Data
+--Step 11 – Remove Invalid Data
 
 DELETE FROM RetailDB
 WHERE 
@@ -63,39 +63,8 @@ WHERE
     OR (Total_Amount IS NOT NULL AND Total_Amount <= 0);
 
 
--- Step 10 – Remove Outliers
+-- Step 12 – Remove Outliers
 
 DELETE FROM RetailDB
 WHERE Total_Amount > 100000;
-
--- DIMENSION: PRODUCT
-
-SELECT 
-    ROW_NUMBER() OVER (ORDER BY Product_Category, Product_Brand) AS Product_ID,
-    Product_Category,
-    Product_Brand
-INTO dim_product
-FROM (
-    SELECT DISTINCT Product_Category, Product_Brand
-    FROM RetailDB
-) t;
--- FACT TABLE: SALES (MAP Product_ID)
-
-SELECT
-    r.Transaction_ID,
-    r.Customer_ID,
-    p.Product_ID,
-    r.Date,
-    r.Total_Purchases,
-    r.Total_Amount
-INTO fact_sales
-FROM RetailDB r
-JOIN dim_product p
-    ON r.Product_Category = p.Product_Category
-   AND r.Product_Brand = p.Product_Brand;
- 
-
-
-
-
 
