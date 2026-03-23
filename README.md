@@ -172,12 +172,13 @@ rfm.to_excel("rfm_output.xlsx")
 
 ## 👨‍💻 Authors
 
-Manoj S V
-D Karthika Chaitrika
-Sharmila U
-Narayanababu M
+* Manoj S V
+* D Karthika Chaitrika
+* Sharmila U
+* Narayanababu M
 
 ---
+
 
 ## ⭐ Conclusion
 
