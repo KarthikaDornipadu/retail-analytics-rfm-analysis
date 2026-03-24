@@ -15,7 +15,7 @@ The dataset includes customer transactions, product details, and order informati
 
 ## Data Model (ERD)
 
-![ERD Diagram](Retail_ERD.png)
+![ERD Diagram](Retail_ERD.jpg)
 
 ## Tools Used
 - SQL
