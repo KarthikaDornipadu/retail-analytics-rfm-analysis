@@ -81,6 +81,24 @@ Customers are scored (1–5) and segmented into:
 
 ---
 
+
+---
+
+## Power BI Dashboard
+
+The dashboard includes:
+
+- Customer Segment Distribution (Pie Chart)
+- Revenue by Customer Segment (Bar Chart)
+- Frequency by Segment (Column Chart)
+
+Dashboard File:
+Dashboard/RFM_dashboard.pbix
+
+---
+
+---
+
 ## 📂 Project Structure
 
 ```
