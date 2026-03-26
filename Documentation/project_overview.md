@@ -21,7 +21,6 @@ The dataset includes customer transactions, product details, and order informati
 - SQL
 - Python
 - GitHub
-- Draw.io
 - Power BI (for dashboard)
 
 ## Project Structure
